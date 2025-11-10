@@ -887,31 +887,40 @@ def forbidden(e):
 # 🏥 HEALTH CHECK OTIMIZADO
 # =========================
 
-@app.route('/healthz')
+@app.route('/healthz', methods=['GET', 'HEAD'])
 def healthz():
-    """Health check com cache"""
+    """Health check com suporte para GET e HEAD requests"""
     try:
-        # Test de conexão simples
+        # Test de conexão com o banco de dados
         db.session.execute(text("SELECT 1")).scalar()
         
-        # Stats básicas com cache
-        if not hasattr(g, 'health_stats'):
-            g.health_stats = {
-                "status": "ok",
-                "timestamp": datetime.utcnow().isoformat(),
-                "database": "connected"
-            }
+        # Para requisições HEAD, retornar apenas status 200
+        if request.method == 'HEAD':
+            return '', 200
         
-        return jsonify(g.health_stats), 200
+        # Para requisições GET, retornar JSON com informações
+        health_info = {
+            "status": "healthy",
+            "timestamp": datetime.utcnow().isoformat(),
+            "database": "connected",
+            "service": "wedding-rsvp"
+        }
+        
+        return jsonify(health_info), 200
         
     except Exception as e:
         current_app.logger.error(f"Health check failed: {e}")
+        
+        # Para requisições HEAD, retornar apenas status 500
+        if request.method == 'HEAD':
+            return '', 500
+        
+        # Para requisições GET, retornar JSON com erro
         return jsonify({
-            "status": "error", 
+            "status": "unhealthy", 
             "message": str(e),
             "timestamp": datetime.utcnow().isoformat()
         }), 500
-
 # =========================
 # 📊 API STATS OTIMIZADA
 # =========================
