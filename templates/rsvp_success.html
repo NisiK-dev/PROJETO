@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block title %}Confirmação Realizada{% endblock %}
+
+{% block content %}
+
+<div class="fixed-background"></div>
+<div class="text-center">
+    <div class="mb-4">
+        <i class="fas fa-check-circle fa-4x text-success"></i>
+    </div>
+    
+    <h2 class="mb-3">Confirmação Realizada com Sucesso!</h2>
+    
+    <p class="lead">Obrigado por confirmar sua presença em nosso casamento.</p>
+    
+    <div class="card mx-auto" style="max-width: 500px;">
+        <div class="card-body">
+            <h5 class="card-title">Detalhes da Confirmação</h5>
+            
+            {% if confirmed_guests %}
+            <div class="mb-3">
+                <strong>Convidados Confirmados:</strong>
+                <ul class="list-unstyled mt-2">
+                    {% for guest in confirmed_guests %}
+                    <li class="mb-1">
+                        <i class="fas fa-check text-success me-2"></i>
+                        {{ guest.name }}
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
+            
+            {% if declined_guests %}
+            <div class="mb-3">
+                <strong>Não Poderão Comparecer:</strong>
+                <ul class="list-unstyled mt-2">
+                    {% for guest in declined_guests %}
+                    <li class="mb-1">
+                        <i class="fas fa-times text-danger me-2"></i>
+                        {{ guest.name }}
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
+            
+            <hr>
+            
+            <div class="text-muted">
+                <small>
+                    <i class="fas fa-info-circle me-1"></i>
+                    Se precisar fazer alguma alteração, entre em contato conosco.
+                </small>
+            </div>
+        </div>
+    </div>
+    
+    <div class="mt-4">
+        <a href="{{ url_for('index') }}" class="btn btn-primary me-3">
+            <i class="fas fa-home me-2"></i>
+            Voltar ao Início
+        </a>
+        <a href="{{ url_for('gifts') }}" class="btn btn-outline-warning">
+            <i class="fas fa-gift me-2"></i>
+            Ver Lista de Presentes
+        </a>
+    </div>
+</div>
+{% endblock %}
