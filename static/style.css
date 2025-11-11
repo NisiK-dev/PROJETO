@@ -146,27 +146,26 @@ body {
 
 /* Cards */
 .card {
-    background: rgb(238, 217, 186, 0.5);
-    color: black;
-    border: none;
-    border-radius: 15px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    background: rgba(230, 210, 250, 0.7); /* lilás claro e translúcido */
+    color: #3d2352; /* roxo escuro para o texto */
+    border: 1px solid #d3b6ff; /* borda lilás suave */
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(120, 70, 150, 0.2); /* sombra roxa leve */
     transition: all 0.3s ease;
     overflow: hidden;
 }
 
 .card:hover {
     transform: translateY(-5px);
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    box-shadow: 0 10px 20px rgba(93, 48, 149, 0.3);
 }
 
 .card-header {
-    background: white;
-    color: black;
-    border: none;
-    padding: 1rem 1.5rem;
+    background: rgba(255, 250, 240, 0.9); /* bege bem claro */
+    color: #a27923; /* dourado suave */
+    font-weight: 600;
+    border-bottom: 2px solid #e6c16d;
 }
-
 .card-header h3,
 .card-header h5,
 .card-header h6 {
