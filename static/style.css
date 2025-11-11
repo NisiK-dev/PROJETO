@@ -1,80 +1,38 @@
+/* Wedding RSVP System Custom Styles - MARIA CLARA COLOR PALETTE */
 
-/* Estilos para o cronômetro responsivo */
-.countdown-container {
-    /* Garante que os itens fiquem em uma única linha e centralizados */
-    display: flex;
-    justify-content: center;
-    flex-wrap: nowrap; /* Impede que os itens quebrem para a próxima linha */
-    margin-bottom: 1.5rem; /* Espaçamento inferior */
-    padding: 0 10px; /* Pequeno padding horizontal para evitar que encoste nas bordas da tela */
-}
-
-.countdown-item {
-    flex: 1; /* Cada item ocupa uma parte igual do espaço disponível */
-    text-align: center;
-    padding: 0 5px; /* Espaçamento entre os itens */
-}
-
-.countdown-number {
-    /* Tamanho da fonte responsivo: mínimo de 2rem, ideal de 8vw, máximo de 4rem */
-    font-size: clamp(2rem, 8vw, 4rem);
-    font-weight: bold;
-    line-height: 1; /* Ajusta a altura da linha para evitar espaços extras */
-    color: #ffffff; /* Cor dos números */
-}
-
-.countdown-label {
-    /* Tamanho da fonte responsivo para os rótulos */
-    font-size: clamp(0.7rem, 2.5vw, 1rem);
-    text-transform: uppercase;
-    margin-top: 5px;
-    color: #ffffff; /* Cor dos rótulos */
-}
-
-/* Ajustes para telas muito pequenas, se necessário */
-@media (max-width: 400px) {
-    .countdown-item {
-        padding: 0 2px; /* Reduz ainda mais o padding em telas muito estreitas */
-    }
-}
-
-/* Efeito de hover para os cards na página inicial */
-.hover-effect {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.hover-effect:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-
-
-
-/* Wedding RSVP System Custom Styles */
-@font-face {
-    font-family: 'minhafont';
-    /* Escolha um nome para sua fonte */
-    src: url('../static/font/Bonello-Regular.otf') format('truetype');
-    /* Caminho para seu arquivo .ttf */
-    font-weight: normal;
-    /* Ou bold, light, etc., dependendo da sua fonte */
-    font-style: normal;
-    /* Ou italic */
-    font-display: swap;
-    /* Boa prática para o carregamento da fonte */
-}
-
+/* ===== PALETA DE CORES ===== */
 :root {
-    --wedding-primary: rgb(93, 48, 149);
-    --wedding-secondary: white;
-    --wedding-accent: blue;
-    --wedding-gold: #fbbf24;
+    /* Roxos e Lavandas */
+    --purple-dark: #8B5A9F;        /* Roxo escuro das rosas */
+    --purple-medium: #A148B1;       /* Roxo médio */
+    --lavender-light: #D2B3D8;     /* Lavanda clara */
+    --lavender-bg: #E9E4EA;        /* Fundo lavanda suave */
+    --lavender-pale: #F4F0F5;      /* Lavanda muito clara */
+    
+    /* Dourados */
+    --gold-main: #CBA048;          /* Dourado principal */
+    --gold-light: #E4C97A;         /* Dourado claro */
+    --gold-accent: #DAB15C;        /* Dourado de destaque */
+    
+    /* Verdes (acentos) */
+    --green-accent: #6A9A76;       /* Verde das folhas */
+    
+    /* Cores funcionais */
+    --text-dark: #4A3856;          /* Texto escuro roxo */
+    --white: #FFFFFF;
+    
+    /* Variáveis antigas mantidas para compatibilidade */
+    --wedding-primary: #A148B1;
+    --wedding-secondary: #FFFFFF;
+    --wedding-accent: #8B5A9F;
+    --wedding-gold: #CBA048;
 }
 
-/* Global Styles */
+/* ===== ESTILOS GLOBAIS ===== */
 body {
-    color: black;
+    color: var(--text-dark);
     line-height: 1.6;
+    background-color: var(--lavender-pale);
 }
 
 .fixed-background {
@@ -83,54 +41,45 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('https://i.imgur.com/QQjN3Kn.jpeg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
+    background: linear-gradient(135deg, var(--lavender-pale) 0%, var(--lavender-bg) 50%, var(--lavender-light) 100%);
     z-index: -1;
-    /* Coloca a imagem atrás do conteúdo */
 }
-.fundoP{ position: fixed;
+
+.fundoP {
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background:white;
-        background-size: cover;
-        background-position: center center;
-        z-index: -1;}
-
-.container {
-    padding: 0px
+    background: linear-gradient(135deg, var(--lavender-pale), var(--lavender-bg));
+    background-size: cover;
+    background-position: center center;
+    z-index: -1;
 }
 
+/* ===== TIPOGRAFIA ===== */
 .text-1 {
     font-family: 'minhafont';
     font-size: 100px;
-    color: #bfbba4;
+    color: var(--gold-main);
     display: flex;
     flex-direction: column;
-    align-items: center; /* Opcional: centraliza os nomes */
-
-    /* Espaço entre os itens */
+    align-items: center;
     gap: 0px;
-
-    /* Borda simulada com sombras */
     text-shadow:
-        -1px -1px 0 #f5f5f5,
-        1px -1px 0 #f5f5f5,
-        -1px 1px 0 #f5f5f5,
-        1px 1px 0 #f5f5f5;
+        -1px -1px 0 var(--white),
+        1px -1px 0 var(--white),
+        -1px 1px 0 var(--white),
+        1px 1px 0 var(--white);
 }
 
-/* Zerando margens dos textos */
-.text-1 .kelly{margin: 0;
-                     line-height: 0.5;}
-
+.text-1 .kelly {
+    margin: 0;
+    line-height: 0.5;
+}
 
 .text-2 {
-    color:rgb(205, 165, 59);
-
+    color: var(--gold-main);
     font-size: 70px;
     font-family: "Poiret One", sans-serif;
     font-weight: 400;
@@ -138,9 +87,8 @@ body {
     margin: 0px;
 }
 
-
 .text-3 {
-    color: rgb(255, 255, 255);
+    color: var(--purple-medium);
     font-size: 30px;
     font-family: "Poiret One", sans-serif;
     font-weight: 400;
@@ -148,13 +96,14 @@ body {
     margin: 0px;
 }
 
-/* Hero Section */
+/* ===== SEÇÃO HERO ===== */
 .hero-section {
+    background: linear-gradient(135deg, var(--purple-medium), var(--purple-dark));
     border-radius: 15px;
     margin-bottom: 2rem;
     position: relative;
     overflow: hidden;
-
+    box-shadow: 0 10px 30px rgba(161, 72, 177, 0.3);
 }
 
 .hero-section::before {
@@ -168,30 +117,26 @@ body {
     background-size: cover;
 }
 
-.hero-section .container {
-    position: relative;
-    z-index: 2;
-}
-
-/* Cards */
+/* ===== CARDS ===== */
 .card {
-    background: rgb(238, 217, 186, 0.5);
-    color: black;
-    border: none;
+    background: rgba(255, 255, 255, 0.95);
+    color: var(--text-dark);
+    border: 2px solid var(--lavender-light);
     border-radius: 15px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    box-shadow: 0 5px 20px rgba(161, 72, 177, 0.15);
     transition: all 0.3s ease;
     overflow: hidden;
 }
 
 .card:hover {
     transform: translateY(-5px);
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    box-shadow: 0 8px 30px rgba(161, 72, 177, 0.25);
+    border-color: var(--purple-medium);
 }
 
 .card-header {
-    background: white;
-    color: black;
+    background: linear-gradient(135deg, var(--purple-medium), var(--purple-dark));
+    color: var(--white);
     border: none;
     padding: 1rem 1.5rem;
 }
@@ -200,1029 +145,306 @@ body {
 .card-header h5,
 .card-header h6 {
     margin: 0;
-    color: black;
-
+    color: var(--white);
 }
 
-/* Buttons */
+/* ===== BOTÕES ===== */
 .btn {
     border-radius: 25px;
     padding: 0.5rem 1.5rem;
     font-weight: 500;
     transition: all 0.3s ease;
-    border: 2px solid var(--wedding-primary);
-    color: var(--wedding-primary);
-    background: var(--wedding-secondary);
+    border: 2px solid var(--purple-medium);
+    color: var(--white);
+    background: linear-gradient(135deg, var(--purple-medium), var(--purple-dark));
 }
 
 .btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    background: var(--wedding-accent);
-    border: 2px solid var(--wedding-secondary);
-    color: var(--wedding-secondary);
+    box-shadow: 0 6px 20px rgba(161, 72, 177, 0.4);
+    background: linear-gradient(135deg, var(--purple-dark), var(--purple-medium));
+    border-color: var(--gold-main);
 }
 
+.btn-primary {
+    background: linear-gradient(135deg, var(--purple-medium), var(--purple-dark));
+    border-color: var(--purple-medium);
+}
 
 .btn-success {
-    background: linear-gradient(45deg, #059669, #10b981);
+    background: linear-gradient(45deg, var(--green-accent), #4CAF50);
+    border-color: var(--green-accent);
 }
 
 .btn-outline-primary {
-    border: 2px solid var(--wedding-primary);
-    color: var(--wedding-primary);
-    background-color: white;
+    border: 2px solid var(--purple-medium);
+    color: var(--purple-medium);
+    background-color: var(--white);
 }
 
 .btn-outline-primary:hover {
-    background: var(--wedding-accent);
-    border: 2px solid var(--wedding-secondary);
-
+    background: linear-gradient(135deg, var(--purple-medium), var(--purple-dark));
+    border-color: var(--gold-main);
+    color: var(--white);
 }
 
-/* Navigation */
+/* ===== NAVEGAÇÃO ===== */
 .navbar-brand {
     font-weight: bold;
     font-size: 1.5rem;
-    color: white;
-
-
+    color: var(--gold-main);
 }
 
 .navbar-toggler {
-    color: white;
-    border: 2px solid white;
-}
-
-.navbar-toggler-icon {
-    color: white;
+    color: var(--gold-main);
+    border: 2px solid var(--gold-main);
 }
 
 .navbar-nav .nav-link {
     transition: all 0.3s ease;
     border-radius: 20px;
     margin: 0 0.2rem;
-    color: white;
+    color: var(--white);
 }
 
 .navbar-nav .nav-link:hover {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(203, 160, 72, 0.2);
     transform: translateY(-1px);
-
+    color: var(--gold-light);
 }
 
-/* Tables */
-.table {
-    border-radius: 10px;
-    overflow: hidden;
-}
-
+/* ===== TABELAS ===== */
 .table th {
-    background: var(--bs-dark);
-    color: white;
+    background: linear-gradient(135deg, var(--purple-medium), var(--purple-dark));
+    color: var(--white);
     border: none;
     font-weight: 600;
-    text-transform: uppercase;
-    font-size: 0.85rem;
-    letter-spacing: 0.5px;
-}
-
-/* Override for AÇÕES header specifically */
-.table th.text-white.fw-bold {
-    color: #ffffff !important;
-    font-weight: 700 !important;
-    text-transform: uppercase;
-}
-
-.table td {
-    vertical-align: middle;
-    border-color: rgba(255, 255, 255, 0.1);
 }
 
 .table-hover tbody tr:hover {
-    background-color: rgba(212, 70, 239, 0.1);
+    background-color: rgba(210, 179, 216, 0.2);
 }
 
-/* Badges */
+/* ===== BADGES ===== */
 .badge {
     font-size: 0.75rem;
     padding: 0.5em 0.75em;
     border-radius: 15px;
+    background: var(--purple-medium);
 }
 
-/* Compact badges for guest cards */
-.guest-card .badge {
-    font-size: 0.65rem !important;
-    padding: 0.3em 0.6em !important;
-    border-radius: 12px !important;
-    font-weight: 600 !important;
+.badge.bg-success {
+    background: var(--green-accent) !important;
 }
 
-/* Forms */
+/* ===== FORMULÁRIOS ===== */
 .form-control,
 .form-select {
     border-radius: 10px;
-    border: 2px solid black;
-    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid var(--lavender-light);
+    background: var(--white);
     transition: all 0.3s ease;
-    color: black;
+    color: var(--text-dark);
 }
 
 .form-control:focus,
 .form-select:focus {
-    border-color: var(--wedding-primary);
-    box-shadow: 0 0 0 0.2rem rgba(212, 70, 239, 0.25);
-    background: rgba(255, 255, 255, 0.1);
-    color: black
+    border-color: var(--purple-medium);
+    box-shadow: 0 0 0 0.2rem rgba(161, 72, 177, 0.25);
+    background: var(--white);
+    color: var(--text-dark);
 }
 
 .form-label {
     font-weight: 600;
-    color: white;
+    color: var(--text-dark);
     margin-bottom: 0.5rem;
 }
 
-.col-md-6 mb-3, .form-label  { color: black !important;}
-
-.form-text {
-    color: rgb(86, 88, 93);
-}
-
-.mb-3,
-.text-muted {
-    color: black !important;
-}
-
-.endereco-quebra {
-    white-space: pre-line;
-    margin-bottom: 1rem;
-    /* equivalente ao mb-3 */
-}
-
-.EU {
-    color: rgb(86, 88, 93);
-}
-
-/* Modals */
-.modal-content {
-    border-radius: 15px;
-    border: none;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-    color: white;
-}
-
-.modal-header {
-    background: white;
-    color: black;
-    border: none;
-    border-radius: 15px 15px 0 0;
-}
-
-.modal-header .btn-close {
-    filter: invert(1);
-}
-
-.modal-body,
-.text-muted {
-    color: white;
-}
-
-/* Alerts */
-.alert {
-    border-radius: 10px;
-    border: none;
-    font-weight: 500;
-}
-
-.alert-success {
-    background: linear-gradient(45deg, #059669, #10b981);
-    color: white;
-}
-
-.alert-danger {
-    background: linear-gradient(45deg, #dc2626, #ef4444);
-    color: white;
-}
-
-.alert-warning {
-    background: linear-gradient(45deg, #d97706, #f59e0b);
-    color: white;
-}
-
-.alert-info {
-    background: linear-gradient(45deg, #0284c7, #0ea5e9);
-    color: white;
-}
-
-/* Statistics Cards */
-.border-primary {
-    border-color: var(--wedding-primary) !important;
-}
-
-.border-success {
-    border-color: #059669 !important;
-}
-
-.border-warning {
-    border-color: #d97706 !important;
-}
-
-.border-danger {
-    border-color: #dc2626 !important;
-}
-
-/* Gift Items */
-.gift-item {
-    transition: all 0.3s ease;
-    border-radius: 10px;
-    background: white;
-
-}
-
-.gift-item h6 {
-    color: black !important;
-    font-weight: bold;
-}
-
-.gift-item:hover {
-    background: rgb(234, 208, 169);
-    transform: translateX(10px);
-
-}
-
-/* Progress Bars */
-.progress {
-    height: 8px;
-    border-radius: 10px;
-    background: rgba(255, 255, 255, 0.1);
-}
-
-.progress-bar {
-    border-radius: 10px;
-}
-
-/* Countdown Timer Styles */
-.countdown-container {
-    padding: 2rem 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 1rem;
-}
-
+/* ===== COUNTDOWN TIMER ===== */
 .countdown-item {
-    text-align: center;
-    padding: 1.2rem 1rem;
-    background: rgba(160, 103, 76, 0.8);
-    border-radius: 15px;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    width: 110px;
-    height: 110px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(160, 103, 76, 0.2);
+    background: linear-gradient(135deg, var(--purple-medium), var(--purple-dark));
+    border: 2px solid var(--gold-main);
+    box-shadow: 0 4px 15px rgba(161, 72, 177, 0.3);
 }
 
 .countdown-item:hover {
     transform: translateY(-5px) scale(1.05);
-    background: rgba(160, 103, 76, 0.95);
-    box-shadow: 0 8px 25px rgba(160, 103, 76, 0.4);
+    background: linear-gradient(135deg, var(--purple-dark), var(--purple-medium));
+    box-shadow: 0 8px 25px rgba(203, 160, 72, 0.4);
 }
 
 .countdown-number {
-    font-size: 2.2rem;
-    font-weight: bold;
-    color: white;
+    color: var(--gold-light);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    margin-bottom: 0.3rem;
-    font-family: 'Courier New', monospace;
-    line-height: 1;
 }
 
 .countdown-label {
-    font-size: 0.8rem;
-    color: rgba(255, 255, 255, 0.95);
-    text-transform: uppercase;
-    letter-spacing: 0.8px;
-    font-weight: 600;
-    line-height: 1;
+    color: var(--white);
 }
 
-/* Responsive countdown */
-@media (max-width: 768px) {
-    .countdown-container {
-        gap: 0.8rem;
-        padding: 1.5rem 0;
-    }
-
-    .countdown-item {
-        width: 90px;
-        height: 90px;
-        padding: 1rem 0.8rem;
-    }
-
-    .countdown-number {
-        font-size: 1.8rem;
-    }
-
-    .countdown-label {
-        font-size: 0.75rem;
-    }
-}
-
-@media (max-width: 576px) {
-    .countdown-container {
-        padding: 1rem 0;
-        gap: 0.6rem;
-    }
-
-    .countdown-item {
-        width: 80px;
-        height: 80px;
-        padding: 0.8rem 0.6rem;
-    }
-
-    .countdown-number {
-        font-size: 1.6rem;
-    }
-
-    .countdown-label {
-        font-size: 0.7rem;
-        letter-spacing: 0.5px;
-    }
-}
-
-@media (max-width: 480px) {
-    .countdown-container {
-        gap: 0.4rem;
-    }
-
-    .countdown-item {
-        width: 70px;
-        height: 70px;
-        padding: 0.6rem 0.4rem;
-    }
-
-    .countdown-number {
-        font-size: 1.4rem;
-    }
-
-    .countdown-label {
-        font-size: 0.65rem;
-    }
-}
-
-
-/* RSVP Form Styles */
-.rsvp-container {
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-/* Enhanced Guest Name Styling */
-.guest-card h5.fw-bold.text-dark {
-    font-size: 1.8rem !important;
-    font-weight: 900 !important;
-    color: #2c3e50 !important;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-    letter-spacing: 0.5px;
-}
-
-/* New RSVP Options Styling - Compact Version */
-.rsvp-options-container {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 15px;
-}
-
+/* ===== OPÇÕES DE RSVP ===== */
 .rsvp-option {
-    background: #ffffff;
-    border: 2px solid #e9ecef;
-    border-radius: 10px;
-    padding: 12px 16px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
+    background: var(--white);
+    border: 2px solid var(--lavender-light);
 }
 
 .rsvp-option:hover {
-    border-color: #dee2e6;
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border-color: var(--lavender-light);
+    box-shadow: 0 4px 12px rgba(161, 72, 177, 0.15);
 }
 
 .rsvp-option.selected {
-    border-color: #0d6efd;
-    background: linear-gradient(135deg, rgba(13, 110, 253, 0.08), rgba(13, 110, 253, 0.03));
-    box-shadow: 0 4px 15px rgba(13, 110, 253, 0.15);
+    border-color: var(--purple-medium);
+    background: linear-gradient(135deg, rgba(161, 72, 177, 0.08), rgba(161, 72, 177, 0.03));
+    box-shadow: 0 4px 15px rgba(161, 72, 177, 0.25);
 }
 
 .rsvp-option.selected::before {
-    content: '';
-    position: absolute;
-    top: 10px;
-    right: 12px;
-    width: 16px;
-    height: 16px;
-    background: #0d6efd;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    background: var(--purple-medium);
 }
 
-.rsvp-option.selected::after {
-    content: '✓';
-    position: absolute;
-    top: 12px;
-    right: 14px;
-    color: white;
-    font-size: 10px;
-    font-weight: bold;
-    z-index: 1;
+.rsvp-option.selected .option-title {
+    color: var(--purple-dark);
 }
 
-.option-content {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.option-icon {
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 16px;
-    flex-shrink: 0;
-}
-
+/* ===== ÍCONES DE OPÇÕES ===== */
 .option-icon.success {
-    background: linear-gradient(135deg, #198754, #20c997);
-    color: white;
+    background: linear-gradient(135deg, var(--green-accent), #4CAF50);
 }
 
 .option-icon.danger {
     background: linear-gradient(135deg, #dc3545, #fd7e14);
-    color: white;
 }
 
-.option-text {
-    flex: 1;
+/* ===== GIFT ITEMS ===== */
+.gift-item {
+    background: var(--white);
+    border: 2px solid var(--lavender-light);
 }
 
-.option-title {
-    margin: 0 0 3px 0;
-    font-size: 14px;
-    font-weight: 700;
-    color: #333;
+.gift-item:hover {
+    background: var(--lavender-pale);
+    border-color: var(--purple-medium);
+    transform: translateX(10px);
 }
 
-.option-subtitle {
-    margin: 0;
-    font-size: 12px;
-    color: #6c757d;
-    line-height: 1.3;
+/* ===== MODAIS ===== */
+.modal-content {
+    border: 2px solid var(--lavender-light);
 }
 
-/* Selected state styling */
-.rsvp-option.selected .option-icon.success {
-    background: linear-gradient(135deg, #198754, #20c997);
-    box-shadow: 0 2px 8px rgba(25, 135, 84, 0.25);
+.modal-header {
+    background: linear-gradient(135deg, var(--purple-medium), var(--purple-dark));
+    color: var(--white);
 }
 
-.rsvp-option.selected .option-icon.danger {
-    background: linear-gradient(135deg, #dc3545, #fd7e14);
-    box-shadow: 0 2px 8px rgba(220, 53, 69, 0.25);
+/* ===== ALERTS ===== */
+.alert-success {
+    background: linear-gradient(45deg, var(--green-accent), #4CAF50);
 }
 
-.rsvp-option.selected .option-title {
-    color: #0d6efd;
-    font-weight: 800;
+.alert-info {
+    background: linear-gradient(45deg, var(--purple-medium), var(--lavender-light));
 }
 
-/* Mobile responsiveness */
-@media (max-width: 768px) {
-    .guest-card h5.fw-bold.text-dark {
-        font-size: 1.6rem !important;
-    }
-    
-    .rsvp-options-container {
-        gap: 8px;
-    }
-    
-    .rsvp-option {
-        padding: 10px 14px;
-    }
-    
-    .option-content {
-        gap: 10px;
-    }
-    
-    .option-icon {
-        width: 30px;
-        height: 30px;
-        font-size: 14px;
-    }
-    
-    .option-title {
-        font-size: 13px;
-    }
-    
-    .option-subtitle {
-        font-size: 11px;
-    }
+/* ===== PROGRESS BARS ===== */
+.progress {
+    background: var(--lavender-bg);
 }
 
+.progress-bar {
+    background: linear-gradient(135deg, var(--purple-medium), var(--purple-dark));
+}
+
+/* ===== SCROLLBAR PERSONALIZADA ===== */
+::-webkit-scrollbar-track {
+    background: var(--lavender-bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--purple-medium);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--purple-dark);
+}
+
+/* ===== CONTAINER PIX ===== */
+.pix-container {
+    background: var(--white);
+    border: 2px solid var(--lavender-light);
+}
+
+.pix-key {
+    background: var(--lavender-pale);
+    color: var(--text-dark);
+}
+
+.pix-copy-btn {
+    background: linear-gradient(135deg, var(--purple-medium), var(--purple-dark)) !important;
+    color: var(--white) !important;
+}
+
+.pix-copy-btn:hover {
+    background: linear-gradient(135deg, var(--purple-dark), var(--gold-main)) !important;
+}
+
+/* ===== UTILITÁRIOS ===== */
+.text-wedding-primary {
+    color: var(--purple-medium) !important;
+}
+
+.bg-wedding-primary {
+    background: linear-gradient(135deg, var(--purple-medium), var(--purple-dark)) !important;
+}
+
+.border-wedding-primary {
+    border-color: var(--purple-medium) !important;
+}
+
+.shadow-wedding {
+    box-shadow: 0 4px 15px rgba(161, 72, 177, 0.3) !important;
+}
+
+/* ===== GUEST CARDS ===== */
 .guest-card {
-    border: 2px solid rgba(255, 255, 255, 0.1);
-    border-radius: 15px;
-    transition: all 0.3s ease;
+    border: 2px solid var(--lavender-light);
 }
 
 .guest-card:hover {
-    border-color: var(--wedding-primary);
-    background: rgba(212, 70, 239, 0.05);
+    border-color: var(--purple-medium);
+    background: rgba(210, 179, 216, 0.1);
 }
 
 .guest-card.selected {
-    border-color: var(--wedding-primary);
-    background: rgba(212, 70, 239, 0.1);
+    border-color: var(--purple-medium);
+    background: rgba(210, 179, 216, 0.15);
 }
 
-/* WhatsApp Styles */
+.guest-card h5.fw-bold.text-dark {
+    color: var(--purple-dark) !important;
+}
+
+/* ===== WHATSAPP PREVIEW ===== */
 .whatsapp-preview {
-    background: #128c7e;
-    color: white;
-    border-radius: 15px;
-    padding: 1rem;
-    font-family: system-ui, -apple-system, sans-serif;
-    position: relative;
+    background: var(--green-accent);
 }
 
-.whatsapp-preview::before {
-    content: '';
-    position: absolute;
-    bottom: -8px;
-    right: 15px;
-    width: 0;
-    height: 0;
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    border-top: 8px solid #128c7e;
-}
-
-/* Loading States */
-.loading {
-    opacity: 0.6;
-    pointer-events: none;
-}
-
-.loading::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 20px;
-    height: 20px;
-    border: 2px solid #f3f3f3;
-    border-top: 2px solid var(--wedding-primary);
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-    0% {
-        transform: translate(-50%, -50%) rotate(0deg);
-    }
-
-    100% {
-        transform: translate(-50%, -50%) rotate(360deg);
-    }
-}
-
-/* Footer */
+/* ===== FOOTER ===== */
 footer {
-    background: linear-gradient(135deg, var(--bs-dark), #1a1a1a) !important;
+    background: linear-gradient(135deg, var(--purple-dark), #3d2849) !important;
 }
 
-/* Responsive Design */
+/* ===== RESPONSIVIDADE ===== */
 @media (max-width: 768px) {
-    body {
-        background-attachment: fixed;
-        background-size: cover;
-        background-position: center top;
-    }
-
     .text-1 {
         font-size: 80px;
-    }
-
-    .card-body {
-        padding: 1rem;
-    }
-
-    .btn {
-        padding: 0.4rem 1rem;
-        font-size: 0.9rem;
-    }
-
-    .table-responsive {
-        font-size: 0.85rem;
     }
 }
 
 @media (max-width: 576px) {
-    body {
-        background-attachment: fixed;
-        background-size: cover;
-        background-position: center center;
-        background-repeat: no-repeat;
-    }
-
     .text-1 {
-        font-size: 80px;
+        font-size: 60px;
     }
-
-    .container {
-        padding: 0 1rem;
-    }
-
-    .hero-section {
-        margin: 1rem 0;
-        padding: 2rem 0;
-    }
-
-    .card {
-        margin-bottom: 1rem;
-    }
-}
-
-/* iOS/iPhone Background Fix */
-@media screen and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
-    body {
-        background-attachment: fixed !important;
-        background-size: cover !important;
-        background-position: center center !important;
-        background-repeat: no-repeat !important;
-        -webkit-background-size: cover !important;
-    }
-}
-
-/* Animation Classes */
-.fade-in {
-    animation: fadeIn 0.5s ease-in;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.slide-in-right {
-    animation: slideInRight 0.5s ease-out;
-}
-
-@keyframes slideInRight {
-    from {
-        opacity: 0;
-        transform: translateX(30px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-/* Gift Cards Styles */
-.card-title {
-    color: black !important;
-    font-weight: bold;
-}
-
-/* Custom Scrollbar */
-::-webkit-scrollbar {
-    width: 8px;
-}
-
-::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb {
-    background: var(--wedding-primary);
-    border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: var(--wedding-accent);
-}
-
-/* Utility Classes */
-.text-wedding-primary {
-    color: var(--wedding-primary) !important;
-}
-
-.bg-wedding-primary {
-    background: var(--wedding-primary) !important;
-}
-
-.border-wedding-primary {
-    border-color: var(--wedding-primary) !important;
-}
-
-.shadow-wedding {
-    box-shadow: 0 4px 15px rgba(212, 70, 239, 0.3) !important;
-}
-
-/* Print Styles */
-@media print {
-    .no-print {
-        display: none !important;
-    }
-
-    .card {
-        box-shadow: none !important;
-        border: 1px solid #ddd !important;
-    }
-
-    .btn {
-        display: none !important;
-    }
-}
-
-/* Text color overrides - Force black text for specific elements */
-.text-dark {
-    color: #000000 !important;
-}
-
-/* Ensure gifts page intro text is black */
-.lead.text-dark {
-    color: #000000 !important;
-    font-weight: 500;
-}
-
-/* Gift card text colors - ensure all text elements are black */
-.gift-card .card-text.text-dark {
-    color: #000000 !important;
-}
-
-.gift-card .card-text {
-    color: #000000 !important;
-}
-
-.gift-card .card-title.text-dark {
-    color: #000000 !important;
-    font-weight: 600;
-}
-
-.gift-card .badge.text-dark {
-    color: #000000 !important;
-    background-color: #f8f9fa !important;
-    border: 1px solid #dee2e6 !important;
-}
-
-/* Force all gift card text elements to be black */
-.gift-card .card-title,
-.gift-card .card-text,
-.gift-card .badge,
-.gift-card h5,
-.gift-card p,
-.gift-card span {
-    color: #000000 !important;
-}
-
-/* Override Bootstrap badge colors specifically for gift cards */
-.gift-card .badge.bg-success {
-    background-color: #f8f9fa !important;
-    color: #000000 !important;
-    border: 1px solid #dee2e6 !important;
-}
-
-.gift-card .badge.bg-light {
-    background-color: #f8f9fa !important;
-    color: #000000 !important;
-    border: 1px solid #dee2e6 !important;
-}
-
-/* Gift preview in homepage - force black text */
-.gift-preview .gift-item h6,
-.gift-preview .gift-item p,
-.gift-preview .gift-item .text-dark {
-    color: #000000 !important;
-}
-
-.gift-item.text-dark,
-.gift-item h6.text-dark,
-.gift-item p.text-dark {
-    color: #000000 !important;
-}
-
-/* RSVP page text styling */
-.rsvp-container .card-header h5,
-.rsvp-container .form-label,
-.rsvp-container .form-text,
-.rsvp-container .lead.text-dark,
-.rsvp-container h2,
-.rsvp-container h6 {
-    color: #000000 !important;
-}
-
-.rsvp-container .form-text {
-    color: #000000 !important;
-    opacity: 0.7;
-}
-
-/* RSVP form input styling */
-.rsvp-container .form-control {
-    border: 2px solid #dee2e6 !important;
-    border-radius: 8px !important;
-    padding: 12px 16px !important;
-    font-size: 16px !important;
-    transition: all 0.3s ease !important;
-    background-color: #ffffff !important;
-}
-
-.rsvp-container .form-control:focus {
-    border-color: #0d6efd !important;
-    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25) !important;
-    outline: none !important;
-    color: black !important;
-}
-
-.rsvp-container .form-control::placeholder {
-    color: #6c757d !important;
-    opacity: 0.7;
-}
-
-/* RSVP Column Layout Adjustments */
-.rsvp-container .col-6 {
-    flex: 0 0 auto !important;
-    width: auto !important;
-    min-width: 52% !important;
-    max-width: 58% !important;
-}
-
-/* RSVP Radio Button Styling */
-.rsvp-container .form-check {
-    background-color: #ffffff !important;
-    border-radius: 10px !important;
-    padding: 20px 28px !important;
-    margin-bottom: 14px !important;
-    border: 2px solid #dee2e6 !important;
-    transition: all 0.3s ease !important;
-    display: flex !important;
-    align-items: center !important;
-    position: relative !important;
-    min-height: 65px !important;
-    height: auto !important;
-    width: 100% !important;
-    flex-wrap: nowrap !important;
-    box-sizing: border-box !important;
-    min-width: 280px !important;
-}
-
-.rsvp-container .form-check:hover {
-    border-color: #adb5bd !important;
-    background-color: #f8f9fa !important;
-    transform: translateY(-1px) !important;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important;
-}
-
-.rsvp-container .form-check-input {
-    background-color: #ffffff !important;
-    border: 2px solid #dee2e6 !important;
-    width: 24px !important;
-    height: 24px !important;
-    margin-top: 0 !important;
-    margin-right: 0 !important;
-    flex-shrink: 0 !important;
-    flex-grow: 0 !important;
-}
-
-.rsvp-container .form-check-input:checked {
-    background-color: #0d6efd !important;
-    border-color: #0d6efd !important;
-}
-
-.rsvp-container .form-check-input:focus {
-    border-color: #86b7fe !important;
-    outline: 0 !important;
-    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25) !important;
-}
-
-.rsvp-container .form-check-label {
-    color: #000000 !important;
-    font-weight: 600 !important;
-    margin-left: 22px !important;
-    cursor: pointer !important;
-    white-space: nowrap !important;
-    overflow: visible !important;
-    text-overflow: unset !important;
-    flex: 1 !important;
-    font-size: 16px !important;
-    line-height: 1.4 !important;
-    width: auto !important;
-    min-width: max-content !important;
-    max-width: none !important;
-    display: block !important;
-    padding-right: 10px !important;
-}
-
-.rsvp-container .form-check-label.text-success {
-    color: #198754 !important;
-}
-
-.rsvp-container .form-check-label.text-danger {
-    color: #dc3545 !important;
-}
-
-.rsvp-container .form-check-label i {
-    margin-right: 8px !important;
-    font-size: 18px !important;
-}
-
-/* Selected radio option styling */
-.rsvp-container .form-check:has(.form-check-input:checked) {
-    background-color: #e7f3ff !important;
-    border-color: #0d6efd !important;
-    box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.1) !important;
-}
-
-/* Special styling for success and danger options when selected */
-.rsvp-container .form-check:has(.form-check-input:checked) .form-check-label.text-success {
-    color: #198754 !important;
-    font-weight: 700 !important;
-}
-
-.rsvp-container .form-check:has(.form-check-input:checked) .form-check-label.text-danger {
-    color: #dc3545 !important;
-    font-weight: 700 !important;
-}
-
-/* PIX container styling */
-.pix-container {
-    background: #fff;
-    border: 1px solid #e0e0e0;
-    padding: 20px;
-    border-radius: 12px;
-    text-align: center;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 10px;
-}
-
-.pix-key {
-    font-size: 16px;
-    font-weight: 600;
-    color: #333;
-    margin-bottom: 15px;
-    word-break: break-all;
-    background: #f5f5f5;
-    padding: 8px 12px;
-    border-radius: 6px;
-    font-family: monospace;
-}
-
-.pix-copy-btn {
-    background-color: #8d6e63 !important;
-    color: white !important;
-    border: none !important;
-    padding: 12px 24px;
-    font-size: 14px;
-    font-weight: 600;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    width: 100%;
-}
-
-.pix-copy-btn:hover {
-    background-color: #6d4c41 !important;
-}
-
-.copied-msg {
-    color: #28a745;
-    font-size: 12px;
-    font-weight: 600;
-    margin-top: 10px;
-    display: none;
 }
