@@ -146,7 +146,7 @@ body {
 
 /* Cards */
 .card {
-    background: rgba(230, 210, 250, 0.7); /* lilás claro e translúcido */
+    background: rgba(255, 250, 240, 0.9); /*rgba(230, 210, 250, 0.7)  lilás claro e translúcido */
     color: #3d2352; /* roxo escuro para o texto */
     border: 1px solid #d3b6ff; /* borda lilás suave */
     border-radius: 20px;
@@ -170,7 +170,7 @@ body {
 .card-header h5,
 .card-header h6 {
     margin: 0;
-    color: black;
+    color: #3d2352;
 
 }
 
@@ -1093,6 +1093,13 @@ footer {
     background-color: #0d6efd !important;
     border-color: #0d6efd !important;
 }
+.table-dark,
+.table-dark tbody tr,
+.table-dark td,
+.table-dark th {
+    background-color: #f5f3f9 !important; /* cor clara lilás ou o que quiser */
+    color: #000 !important; /* texto preto */
+}
 
 .rsvp-container .form-check-input:focus {
     border-color: #86b7fe !important;
@@ -1196,3 +1203,5 @@ footer {
     margin-top: 10px;
     display: none;
 }
+
+
