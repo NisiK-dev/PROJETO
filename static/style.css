@@ -107,7 +107,7 @@ body {
 .text-1 {
     font-family: 'minhafont';
     font-size: 100px;
-    color: #bfbba4;
+    color: rgb(93, 48, 149);
     display: flex;
     flex-direction: column;
     align-items: center; /* Opcional: centraliza os nomes */
@@ -140,8 +140,8 @@ body {
 
 
 .text-3 {
-    color: rgb(255, 255, 255);
-    font-size: 30px;
+    color:rgb(205, 165, 59);
+    font-size: 100px;
     font-family: "Poiret One", sans-serif;
     font-weight: 400;
     font-style: normal;
