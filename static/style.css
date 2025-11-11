@@ -1207,10 +1207,12 @@ footer {
 /* No seu CSS, adicione (ou modifique) este bloco para o estilo zebrado */
 .table-striped > tbody > tr:nth-of-type(odd) > * {
     background-color: rgba(93, 48, 149, 0.05); /* Um roxo bem clarinho com 5% de opacidade */
+    color: #333;
 }
 
 /* Opcional: Para as linhas pares, você pode querer que elas fiquem com a cor do card */
 .table-striped > tbody > tr:nth-of-type(even) > * {
     background-color: rgba(255, 250, 240, 0.9); /* A cor atual do card, ou outra cor clara */
+    color: #333;
 }
 
