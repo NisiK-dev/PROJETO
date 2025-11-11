@@ -44,6 +44,10 @@ body {
     line-height: 1.6;
 }
 
+.navbar {
+    background-color: rgb(205, 165, 59) !important; /* roxo claro */
+}
+
 .fixed-background {
     position: fixed;
     top: 0;
@@ -98,7 +102,7 @@ body {
 .text-2 {
     color:rgb(205, 165, 59);
 
-    font-size: 70px;
+    font-size: 30px;
     font-family: "Poiret One", sans-serif;
     font-weight: 400;
     font-style: normal;
@@ -108,7 +112,7 @@ body {
 
 .text-3 {
     color:rgb(205, 165, 59);
-    font-size: 100px;
+    font-size: 50px;
     font-family: "Poiret One", sans-serif;
     font-weight: 400;
     font-style: normal;
