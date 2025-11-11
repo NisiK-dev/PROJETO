@@ -1214,15 +1214,38 @@ footer {
     background-color: rgba(255, 250, 240, 0.9); /* A cor atual do card, ou outra cor clara */
 }
 
-/* Forçar cor preta para nomes de convidados nos cards */
+/* ===== CORREÇÃO COR DOS NOMES DOS CONVIDADOS ===== */
+
+/* Força cor preta para todos os nomes de convidados */
 .guest-card h5,
 .guest-card .card-title,
-.guest-card .fw-bold {
+.guest-card .fw-bold,
+.guest-card h5.fw-bold.text-dark,
+.guest-card .card-header h5,
+.card-body h5.fw-bold {
+    color: #000000 !important;
+    font-weight: bold !important;
+}
+
+/* Para elementos de texto em geral nos cards */
+.card .text-white,
+.card-header .text-white {
     color: #000000 !important;
 }
 
-/* Especificamente para o elemento de nome do convidado */
-.guest-card h5.fw-bold.text-dark {
+/* Para labels e textos de formulário */
+.rsvp-container .form-label,
+.rsvp-container .card-header h5,
+.rsvp-container h2,
+.rsvp-container h6 {
     color: #000000 !important;
+}
+
+/* Para garantir que títulos em modais também sejam pretos */
+.modal-header h5,
+.modal-body h5 {
+    color: #000000 !important;
+}
+
 }
 
