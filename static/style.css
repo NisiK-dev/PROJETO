@@ -1214,4 +1214,15 @@ footer {
     background-color: rgba(255, 250, 240, 0.9); /* A cor atual do card, ou outra cor clara */
 }
 
+/* Forçar cor preta para nomes de convidados nos cards */
+.guest-card h5,
+.guest-card .card-title,
+.guest-card .fw-bold {
+    color: #000000 !important;
+}
+
+/* Especificamente para o elemento de nome do convidado */
+.guest-card h5.fw-bold.text-dark {
+    color: #000000 !important;
+}
 
