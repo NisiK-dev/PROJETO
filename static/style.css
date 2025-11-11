@@ -54,7 +54,7 @@
 @font-face {
     font-family: 'minhafont';
     /* Escolha um nome para sua fonte */
-    src: url('../static/font/Emitha-Script.otf') format('truetype');
+    src: url('../static/font/Bonello-Regular.otf') format('truetype');
     /* Caminho para seu arquivo .ttf */
     font-weight: normal;
     /* Ou bold, light, etc., dependendo da sua fonte */
